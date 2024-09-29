@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Hammersmith+One|Russo+One|Staatliches&display=swap');
 @font-face {
     font-family: 'Vazir';
-    src: url('../fonts/Vazir.eot');
-    src: local('../fonts/Vazir'), url('../fonts/Vazir.woff') format('woff'), url('../fonts/Vazir.ttf') format('truetype');
+    src: url('../Vazir.eot');
+    src: local('../Vazir'), url('../Vazir.woff') format('woff'), url('../Vazir.ttf') format('truetype');
 }
 
 body {
-    background: url(../img/background.png);
+    background: url(../background.png);
     background-size: cover;
     margin: 0vw;
 }
