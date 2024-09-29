@@ -35,13 +35,13 @@ function copyText(text) {
 
 function openLink(value) {
     if (value == "first") {
-         window.location.href = "mtasa://vwrp.ir:22003";
+         window.location.href = "mtasa://sv.vwrp.ir:22003";
     }
     if (value == "second") {
-        window.location.href = "https://discord.gg/tqnpyQbTyH";
+        window.location.href = "https://discord.gg/NjwFqRCbzJ";
     }
     if (value == "third") {
-        window.location.href = "ts3server://vwrp.ir";
+        window.location.href = "ts3server://ts.vwrp.ir:1153";
     }
     if (value == "start") {
         window.location.href = "index.html";
