@@ -1,6 +1,6 @@
-let first = null;
-let second = "https://discord.gg/";
-let third = "TeamSpeak Link";
+let first = "sv.vwrp.ir";
+let second = "https://discord.gg/NjwFqRCbzJ";
+let third = "ts.vwrp.ir:1153";
 
 
 function copyText(text) {
