@@ -47,7 +47,7 @@
     <div class="sec3">
         <div class="sectitle">Discord</div>
         <div class="secsubtitle blue">Vinewood</div>
-        <div class="secslots">240/∞</div>
+        <div class="secslots">130/∞</div>
         <div class="secip blue" id="second" onclick="openLink('second')">tqnpyQbTyH</div><i onclick="copyText('second')" class="grey2 far fa-copy"></i>
         <div class="secbarfull">
             <div class="secinbar bluebg"></div>

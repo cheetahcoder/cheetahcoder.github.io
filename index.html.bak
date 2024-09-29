@@ -1,7 +1,6 @@
 <html>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="shortcut icon" href="img/1.png" />
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/all.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -10,7 +9,6 @@
 <title>Vinewood Role Play</title>
 <div class="logo">Vinewood RP</div>
 <img class="backguy" src="img/pic1.png">
-
 
 <ul class="menu">
     <!--<li class="menuitem" onclick="openLink('start')" style="border-color: #3ca918">Start</li>-->
@@ -28,15 +26,15 @@
 <div class="bar">
     <div class="sec1">
         <div class="sec1time">3:13</div>
-        <div class="sec1title">وضعیت سرور:فعال</div>
-        <div class="sec1subtitle">بهترین سرور رول پلی ام تی ای در ایران</div>
+        <div class="sec1title">سرور : قفل</div>
+        <div class="sec1subtitle">به زودی شهر شروع به کار میکند</div>
     </div>
 
     <div class="sec2">
         <div class="sectitle">MTA</div>
         <div class="secsubtitle">Vinewood</div>
-        <div class="secslots">30/50</div>
-        <div class="secip" id="first" onclick="openLink('first')">vwrp.ir</div><i onclick="copyText('first')" class="grey1 far fa-copy"></i>
+        <div class="secslots">10/32</div>
+        <div class="secip" id="first" onclick="openLink('first')">vinewood.ir</div><i onclick="copyText('first')" class="grey1 far fa-copy"></i>
         <div class="secbarfull">
             <div class="secinbar"></div>
         </div>
@@ -46,8 +44,8 @@
 
     <div class="sec3">
         <div class="sectitle">Discord</div>
-        <div class="secsubtitle blue">Vinewood</div>
-        <div class="secslots">240/∞</div>
+        <div class="secsubtitle blue">Server</div>
+        <div class="secslots">130/∞</div>
         <div class="secip blue" id="second" onclick="openLink('second')">tqnpyQbTyH</div><i onclick="copyText('second')" class="grey2 far fa-copy"></i>
         <div class="secbarfull">
             <div class="secinbar bluebg"></div>
@@ -58,9 +56,9 @@
 
     <div class="sec4">
         <div class="sectitle">TeamSpeak</div>
-        <div class="secsubtitle pink">Vinewood</div>
-        <div class="secslots">20/32</div>
-        <div class="secip pink" id="third" onclick="openLink('third')">vwrp.ir	</div><i onclick="copyText('third')" class="grey3 far fa-copy"></i>
+        <div class="secsubtitle pink">Server</div>
+        <div class="secslots">10/32</div>
+        <div class="secip pink" id="third" onclick="openLink('third')">vinewood.ir	</div><i onclick="copyText('third')" class="grey3 far fa-copy"></i>
         <div class="secbarfull">
             <div class="secinbar pinkbg"></div>
         </div>
