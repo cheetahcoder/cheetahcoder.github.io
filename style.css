@@ -100,6 +100,24 @@ body {
 	
 }
 
+.button2 {
+	
+    color: #fff;
+    position: absolute;
+    font-size: 1vw;
+    font-family: 'Vazir';
+    background: #3ca918;
+    padding: 1vw;
+    width: 8vw;
+    text-align: center;
+    height: 1vw;
+    line-height: 1.1vw;
+    top: 14vw;
+    cursor: pointer;
+    left : 5vw;
+	
+}
+
 .bar {
     position: absolute;
     bottom: 0vw;
