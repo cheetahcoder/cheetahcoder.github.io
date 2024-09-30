@@ -52,6 +52,9 @@ function openLink(value) {
     if (value == "third") {
         window.location.href = "ts3server://ts.vwrp.ir:1153";
     }
+    if (value == "download") {
+        window.location.href = "https://s32.picofile.com/file/8479443942/MTA_Game_Vinewood_RP.rar.html";
+    }
     if (value == "start") {
         window.location.href = "index.html";
     }
