@@ -1,7 +1,7 @@
 let first = "sv.vwrp.ir";
 let second = "https://discord.gg/NjwFqRCbzJ";
 let third = "ts.vwrp.ir:1153";
-
+let download = "https://s32.picofile.com/file/8479443942/MTA_Game_Vinewood_RP.rar.html";
 
 function copyText(text) {
     if (text == "first") {
@@ -25,6 +25,15 @@ function copyText(text) {
     if (text == "third") {
         var input = document.createElement('input');
         input.setAttribute('value', third);
+        document.body.appendChild(input);
+        input.select();
+        var result = document.execCommand('copy');
+        document.body.removeChild(input)
+        return result;
+    }
+     if (text == "download") {
+        var input = document.createElement('input');
+        input.setAttribute('value', download);
         document.body.appendChild(input);
         input.select();
         var result = document.execCommand('copy');
