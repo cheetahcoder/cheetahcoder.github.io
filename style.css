@@ -1,12 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Hammersmith+One|Russo+One|Staatliches&display=swap');
+@import url('../https@fonts.googleapis.com/css@family=Hammersmith+One_7CRusso+One_7CStaatliches&display=swap');
 @font-face {
     font-family: 'Vazir';
-    src: url('../Vazir.eot');
-    src: local('../Vazir'), url('../Vazir.woff') format('woff'), url('../Vazir.ttf') format('truetype');
+    src: url('Vazir.eot');
+    src: local('../Vazir'), url('Vazir.woff') format('woff'), url('Vazir.ttf') format('truetype');
 }
 
 body {
-    background: url(../background.png);
+    background: url(background.png);
     background-size: cover;
     margin: 0vw;
 }
@@ -96,8 +96,15 @@ body {
     line-height: 1.1vw;
     top: 14vw;
     cursor: pointer;
+    transform: scale(1);
+    transition: 1s;
 	
 	
+}
+.button1:hover{
+    opacity: 70%;
+    transform: scale(0.9);
+    transition: 1s;
 }
 
 .button2 {
@@ -115,7 +122,16 @@ body {
     top: 14vw;
     cursor: pointer;
     left : 15vw;
+    
+        transform: scale(1);
+        transition: 1s;
+    
 	
+}
+.button2:hover{
+    opacity: 70%;
+    transform: scale(0.9);
+    transition: 1s;
 }
 
 .bar {
@@ -244,7 +260,23 @@ body {
     line-height: 2vw;
     right: 17vw;
     top: 2vw;
+    transform: scale(1);
+    transition: 1s;
 }
+.secbadge:hover{
+    
+    transform: scale(0.9);
+    transition: 1s;
+    
+}
+.link{
+    color: #fff;
+}
+.link:hover{
+    cursor:pointer ;
+   
+}
+
 
 .sec3 {
     float: right;
@@ -304,7 +336,7 @@ body {
     font-size: 1vw;
     position: absolute;
     top: 9.6vw;
-    right: 8.5vw;
+    right: 7.8vw;
     cursor: pointer;
 }
 
