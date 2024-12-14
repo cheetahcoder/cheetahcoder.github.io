@@ -1,7 +1,8 @@
 let first = "sv.vwrp.ir";
-let second = "https://discord.gg/NjwFqRCbzJ";
-let third = "ts.vwrp.ir:1153";
-let download = "https://s32.picofile.com/file/8479443942/MTA_Game_Vinewood_RP.rar.html";
+let discord1 = "https://discord.gg/uEGXVPuZ"
+let second = "sv.vwrp.ir";
+let third = "ts.vwrp.ir:8533";
+let download = "../https@s32.picofile.com/file/8479443942/MTA_Game_Vinewood_RP.rar.html";
 
 function copyText(text) {
     if (text == "first") {
@@ -40,6 +41,15 @@ function copyText(text) {
         document.body.removeChild(input)
         return result;
     }
+    if (text == "discord1") {
+        var input = document.createElement('input');
+        input.setAttribute('value', discord1);
+        document.body.appendChild(input);
+        input.select();
+        var result = document.execCommand('copy');
+        document.body.removeChild(input)
+        return result;
+    }
 }
 
 function openLink(value) {
@@ -47,13 +57,13 @@ function openLink(value) {
          window.location.href = "mtasa://sv.vwrp.ir:22003";
     }
     if (value == "second") {
-        window.location.href = "https://discord.gg/NjwFqRCbzJ";
+        window.location.href = "../https@discord.gg/NjwFqRCbzJ";
     }
     if (value == "third") {
-        window.location.href = "ts3server://ts.vwrp.ir:1153";
+        window.location.href = "ts3server://ts.vwrp.ir:8533";
     }
     if (value == "download") {
-        window.location.href = "https://s32.picofile.com/file/8479443942/MTA_Game_Vinewood_RP.rar.html";
+        window.location.href = "../https@s32.picofile.com/file/8479443942/MTA_Game_Vinewood_RP.rar.html";
     }
     if (value == "start") {
         window.location.href = "index.html";
