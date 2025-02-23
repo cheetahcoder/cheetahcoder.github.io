@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- ریسپانسیو -->
+    <title>ماشین حساب ریاضی پایه هفتم</title>
+    <link href="https://fonts.googleapis.com/css2?family=BNazanin&display=swap" rel="stylesheet">
+    <style>
+        /* تنظیمات پیش‌فرض */
+        * {
+            box-sizing: border-box; /* حل مشکل خروج تکست‌باکس از مرز */
+        }
+
+        body {
+            font-family: 'BNazanin', Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
+            color: #333;
+            direction: rtl;
+            text-align: center;
+        }
+
+        /* ستون‌بندی ماشین‌حساب */
+        .calculator {
+            margin: 20px auto;
+            padding: 15px;
+            border: 2px solid #4CAF50;
+            border-radius: 10px;
+            background-color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            max-width: 400px; /* اندازه‌بندی مناسب */
+        }
+
+        .calculator:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* ورودی‌ها و دکمه‌ها */
+        input[type="number"], button {
+            width: 100%;
+            max-width: 300px; /* کاهش طول تکست‌باکس‌ها */
+            margin: 10px auto;
+            padding: 10px;
+            border: 1px solid #4CAF50;
+            border-radius: 5px;
+            font-size: 16px;
+            display: block;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* نتایج */
+        .result {
+            margin-top: 15px;
+            font-size: 16px;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* عنوان‌ها */
+        h1 {
+            font-size: 24px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        /* بخش سازنده */
+        .creator {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #555;
+            text-align: center;
+        }
+
+        .creator a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .creator a:hover {
+            text-decoration: underline;
+        }
+
+        /* ریسپانسیو برای موبایل */
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .calculator {
+                padding: 10px;
+                max-width: 100%; /* پهنای کامل صفحه */
+            }
+
+            input[type="number"], button {
+                max-width: 100%; /* پهنای کامل صفحه */
+                font-size: 14px;
+                padding: 8px;
+            }
+
+            h1 {
+                font-size: 20px;
+            }
+
+            h2 {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>ماشین حساب ریاضی پایه هفتم</h1>
+
+    <!-- بخش محاسبه ب.م.م و ک.م.م -->
+    <div class="calculator">
+        <h2>محاسبه ب.م.م و ک.م.م</h2>
+        <input type="number" id="num1" placeholder="عدد اول" required>
+        <input type="number" id="num2" placeholder="عدد دوم" required>
+        <button onclick="calculateGCD_LCM()">محاسبه</button>
+        <div class="result" id="gcdLcmResult"></div>
+    </div>
+
+    <!-- بخش تشخیص عدد اول -->
+    <div class="calculator">
+        <h2>تشخیص عدد اول</h2>
+        <input type="number" id="primeNumber" placeholder="عدد" required>
+        <button onclick="checkPrime()">بررسی</button>
+        <div class="result" id="primeResult"></div>
+    </div>
+
+    <!-- بخش سازنده -->
+    <div class="creator">
+        طراحی و برنامه‌نویسی: <a href="https://example.com" target="_blank">نگار احمدی و نازنین مریم نورمحمدی</a>
+    </div>
+
+    <script>
+        // محاسبه ب.م.م و ک.م.م
+        function calculateGCD_LCM() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                document.getElementById('gcdLcmResult').innerHTML = "لطفاً اعداد معتبر وارد کنید.";
+                return;
+            }
+
+            function gcd(a, b) {
+                return b === 0 ? a : gcd(b, a % b);
+            }
+
+            const gcdResult = gcd(num1, num2);
+            const lcmResult = (num1 * num2) / gcdResult;
+
+            document.getElementById('gcdLcmResult').innerHTML = `ب.م.م: ${gcdResult}, ک.م.م: ${lcmResult}`;
+        }
+
+        // تشخیص عدد اول
+        function checkPrime() {
+            const number = parseFloat(document.getElementById('primeNumber').value);
+
+            if (isNaN(number) || number <= 1) {
+                document.getElementById('primeResult').innerHTML = `${number} عدد اول نیست.`;
+                return;
+            }
+
+            let isPrime = true;
+            for (let i = 2; i <= Math.sqrt(number); i++) {
+                if (number % i === 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            document.getElementById('primeResult').innerHTML = 
+                isPrime ? `${number} یک عدد اول است.` : `${number} عدد اول نیست.`;
+        }
+    </script>
+</body>
+</html>

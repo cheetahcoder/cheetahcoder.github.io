@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ریاضیات پایه هشتم - رابطه فیثاغورث</title>
+    <style>
+        /* تنظیمات پیش‌فرض */
+        :root {
+            --primary-color: #2196F3;
+            --secondary-color: #1976D2;
+            --background: #f5f5f5;
+        }
+
+        body {
+            font-family: 'B Nazanin', 'Segoe UI', Tahoma, sans-serif;
+            max-width: 100%;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--background);
+            line-height: 1.6;
+            font-size: 16px;
+            direction: rtl; /* اطمینان از راست به چپ */
+            text-align: right; /* متن به سمت راست چیده می‌شود */
+        }
+
+        .header, .calculator-card {
+            max-width: 600px; /* اندازه یکسان برای باکس‌های بالا و پایین */
+            margin: 0 auto; /* مرکز کردن */
+        }
+
+        .header {
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        .calculator-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column; /* پیش‌فرض: ورودی‌ها در زیر هم */
+            gap: 15px; /* فاصله بین ورودی‌ها */
+            margin-bottom: 20px; /* فاصله بین تکست‌باکس‌ها و دکمه */
+        }
+
+        input {
+            padding: 15px;
+            font-size: 18px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            transition: border-color 0.3s ease;
+            width: 100%; /* عرض کامل والد */
+            box-sizing: border-box; /* جلوگیری از فیل آوت */
+        }
+
+        input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 8px rgba(33, 150, 243, 0.2);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            width: 100%; /* عرض کامل والد */
+            box-sizing: border-box; /* جلوگیری از فیل آوت */
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+            box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+        }
+
+        .result-box {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 4px solid var(--primary-color);
+            display: none;
+            animation: fadeIn 0.5s ease;
+            text-align: right; /* متن به سمت راست چیده می‌شود */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .formula {
+            text-align: center;
+            margin: 25px 0;
+            font-size: 24px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .creator {
+            text-align: center;
+            margin-top: 50px;
+            color: #757575;
+            font-size: 14px;
+            border-top: 2px solid #eee;
+            padding-top: 20px;
+        }
+
+        /* تنظیمات برای صفحات بزرگتر */
+        @media (min-width: 768px) {
+            body {
+                font-size: 18px;
+                padding: 30px 40px;
+            }
+
+            .input-group {
+                flex-direction: row; /* ورودی‌ها در کنار هم قرار می‌گیرند */
+                gap: 20px;
+            }
+
+            input {
+                flex: 1;
+                min-width: 200px;
+            }
+
+            button {
+                padding: 15px 30px;
+                font-size: 18px;
+                width: auto; /* برای صفحات بزرگتر */
+            }
+        }
+
+        /* تنظیمات برای موبایل */
+        @media (max-width: 768px) {
+            body {
+                font-size: 14px;
+                padding: 15px;
+            }
+
+            .header {
+                padding: 15px;
+            }
+
+            button {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>ریاضیات پایه هشتم</h1>
+        <p>محاسبه گر رابطه فیثاغورث</p>
+    </div>
+    <div class="calculator-card">
+        <div class="formula">c² = a² + b²</div>
+        
+        <div class="input-group">
+            <input type="number" id="sideA" placeholder="طول ضلع اول (a)">
+            <input type="number" id="sideB" placeholder="طول ضلع دوم (b)">
+        </div>
+        <button onclick="calculateHypotenuse()">
+            <span>محاسبه وتر (c)</span>
+        </button>
+        <div class="result-box" id="hypotenuseResult">
+            <span id="resultText"></span>
+        </div>
+    </div>
+    <div class="creator">
+        طراحی و توسعه: مهدیه لطفی و نیایش نورمحمدی
+    </div>
+    <script>
+        function calculateHypotenuse() {
+            const a = parseFloat(document.getElementById('sideA').value);
+            const b = parseFloat(document.getElementById('sideB').value);
+
+            // استخراج رنگ اصلی از CSS
+            const root = document.documentElement;
+            const primaryColor = getComputedStyle(root).getPropertyValue('--primary-color').trim();
+
+            if (isNaN(a) || isNaN(b)) {
+                showResult('لطفاً مقادیر معتبر وارد کنید!', 'red');
+                return;
+            }
+
+            const hypotenuse = Math.sqrt(a * a + b * b);
+            showResult(`طول وتر: ${hypotenuse.toFixed(2)}`, primaryColor);
+        }
+
+        function showResult(text, color) {
+            const resultBox = document.getElementById('hypotenuseResult');
+            const resultText = document.getElementById('resultText');
+
+            resultBox.style.display = 'block';
+            resultText.textContent = text;
+            resultBox.style.borderLeftColor = color; // تنظیم رنگ border-left
+            resultText.style.color = color; // تنظیم رنگ متن
+        }
+    </script>
+</body>
+</html>
